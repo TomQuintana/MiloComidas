@@ -1,0 +1,16 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["airbnb-base"],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    "import/prefer-default-export": ["off"],
+    "no-console": 0,
+    "no-multiple-empty-lines": [2, {"max": 99999, "maxEOF": 0}],
+    "semi": 0
+  }
+}
