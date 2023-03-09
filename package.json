@@ -3,17 +3,21 @@
   "version": "1.0.0",
   "description": "Api for save details of food and search food",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon index.js"
   },
   "author": "Tom",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.35.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5"
+    "eslint-plugin-import": "^2.27.5",
+    "nodemon": "^2.0.21"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2"
   }
 }
