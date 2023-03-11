@@ -7,7 +7,7 @@ const foodInformationSchema = mongoose.Schema({
     trim: true,
   },
   date: {
-    type: Date,
+    type: String,
     required: true,
     trim: true
   },
@@ -18,6 +18,14 @@ const foodInformationSchema = mongoose.Schema({
   meal: {
     type: String,
     required: true
+  },
+  status: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true,
   }
 })
 
