@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const conectarDB = async () => {
   try {
@@ -11,8 +11,8 @@ const conectarDB = async () => {
     console.log(`MongoDB conectado en: ${url}`)
   } catch (error) {
     console.log(`error: ${error.message}`)
-    process.exit(1);
+    process.exit(1)
   }
 }
 
-export default conectarDB;
+export default conectarDB
