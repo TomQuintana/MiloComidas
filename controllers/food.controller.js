@@ -2,6 +2,7 @@ import validateType from '../helpers/validateType.js'
 import {generateSaveFood} from '../helpers/dbActions.js'
 
 const defaultTypes = ['fruta','verdura','desayuno','pollo','pescado','otros']
+
 const registerFood = async (req, res) => {
 
   const {type} = req.body
