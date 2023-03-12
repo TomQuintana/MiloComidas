@@ -8,6 +8,7 @@ const validateType = (type, arrayType) => {
   return value
 }
 
+//TODO: add condition for evaluate meal and type
 const searchByType = (type, arrayFood) => {
   let arraySelection = []
   arrayFood.forEach( arrayElements => {
@@ -32,9 +33,25 @@ const verifyStock = (meal) => {
   }
 }
 
+const takeAllMealsByStock = (meals, filter) => {
+  let mealsStock = []
+  //TODO: evaluate filter.stock == stock 
+  if(true) {
+    const mealsStock = []
+    meals.forEach(element => {
+      if(element.stock <= 0) {
+        mealsStock.push(element)
+      }
+      console.log({ mealsStock })
+      return mealsStock
+    })
+    return mealsStock
+  }
+}
 
 export {
   validateType,
   searchByType,
-  verifyStock
+  verifyStock,
+  takeAllMealsByStock
 }
