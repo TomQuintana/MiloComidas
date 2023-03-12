@@ -1,12 +1,10 @@
-import validateType from '../helpers/validateType.js'
-import {generateSaveFood} from '../helpers/dbActions.js'
+import {searchByType, validateType, verifyStock} from '../helpers/functions.helpers.js'
+import {generateSaveFood, getFood} from '../helpers/dbActions.js'
 
 const defaultTypes = ['fruta','verdura','desayuno','pollo','pescado','otros']
 
 const registerFood = async (req, res) => {
-
   const {type} = req.body
-  // validateType(type, defaultTypes true si hace match
   const trueType = validateType(type, defaultTypes)
 
   if(!trueType) {
@@ -15,10 +13,24 @@ const registerFood = async (req, res) => {
   }
 
   const mealRes = await generateSaveFood(req.body)
-
   return res.json({mealRes})
 }
 
+const modifyFood = async (req,res) => {
+  const {stock, type} = req.body
+  const meals = await getFood()
+  const foodByTypeSelection = searchByType(type, meals)
+  foodByTypeSelection[0].stock = stock
+  const mealRes = await generateSaveFood(foodByTypeSelection[0])
+  const mealVerifyStock = verifyStock(mealRes)
+
+  res.json({
+    msg: mealVerifyStock.msg,
+    meal: mealVerifyStock.meal
+  })
+}
+
 export {
-  registerFood
+  registerFood,
+  modifyFood
 }

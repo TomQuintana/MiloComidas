@@ -11,6 +11,16 @@ const generateSaveFood = async(mealInformation) => {
   }
 }
 
+const getFood = async () => {
+  try {
+    const mealAlls = await foodInformation.find({})
+    return mealAlls
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
-  generateSaveFood
+  generateSaveFood,
+  getFood 
 }
